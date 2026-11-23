@@ -1,0 +1,25 @@
+:root{--rail:176px;--archive-caption:#c0beb4}
+.sidebar .brand{color:#e7e8db}
+.sidebar .figure-index{display:grid;gap:4px;margin:clamp(20px,5vh,55px) 0 0;padding:0 8px;max-height:48vh;overflow:auto}
+.figure-index strong,.figure-index a,.archive-note,.fig-no{font:11px/1.45 "Courier New",monospace;letter-spacing:.07em}
+.figure-index strong{color:#d8e58d;margin-bottom:9px}
+.figure-index a{display:grid;grid-template-columns:46px 1fr;gap:6px;padding:4px 0;color:var(--archive-caption)}
+.figure-index a:hover,.figure-index a:focus-visible{color:#d8e58d}
+.figure-index a[hidden]{display:none}
+.figure-index a span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.intro-panel{min-height:clamp(470px,82vh,790px);background:radial-gradient(ellipse at 50% 47%,#373c2a 0%,#252822 42%,var(--paper) 76%)}
+.intro-panel .archive-note{margin-top:25px;color:var(--archive-caption)}
+#works{position:relative;padding-top:clamp(20px,3vw,42px)}
+#works .sectionline{align-items:end;margin-bottom:clamp(16px,2.3vw,30px)}
+#works .sectionline h2{font-size:clamp(38px,7.1vw,112px);color:#d1d0c4;font-weight:700;line-height:.9}
+.archive-note{display:block;color:var(--archive-caption);margin-bottom:10px}
+#works .work-gallery .item{scroll-margin-top:92px}
+#works .work-gallery .cover{border-radius:4px}
+#works .work-gallery .item .meta{display:flex;gap:10px;color:var(--archive-caption)}
+.fig-no{flex:none;color:#d8e58d}
+.archive-outro{margin:clamp(45px,10vw,145px) 0 44px;min-height:clamp(210px,32vw,380px);display:grid;align-content:center;justify-items:center;text-align:center;gap:14px;padding:20px;border:1px solid #514940;background:repeating-radial-gradient(ellipse at center,#2a2120 0 12%,#302320 12.2% 18%,#2a2120 18.2% 24%);border-radius:5px}
+.archive-outro strong{font:italic 700 clamp(29px,6vw,86px)/1.1 Georgia,"Microsoft YaHei",serif;color:#f1e3c8}
+.archive-outro .archive-note{margin:0;color:#e4cbb9}
+.archive-outro a{text-decoration:underline;text-underline-offset:4px;color:#e9d791}
+@media(max-width:900px){#works .sectionline{align-items:start;flex-direction:column}}
+@media(max-width:650px){.sidebar .figure-index{display:none}.intro-panel{min-height:clamp(385px,73svh,560px)}}
