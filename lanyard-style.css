@@ -1,0 +1,26 @@
+.badge-stage{perspective:1000px}
+.badge-pendulum{filter:drop-shadow(0 12px 17px #0004)}
+.badge-strap{width:88px}
+.strap-edge{stroke:#080a09}
+#badge-weave rect{fill:#111111}
+#badge-weave path{stroke:#494949;stroke-opacity:.35}
+.badge-ring{
+  width:18px;height:25px;border:3px solid #c1c5c3;border-radius:5px;
+  background:linear-gradient(100deg,#5a6060,#e9ede9 43%,#656c69);
+  box-shadow:inset 0 0 0 3px #242925,1px 2px 2px #0008;
+}
+.badge-ring::after{content:"";position:absolute;top:18px;left:2px;width:8px;height:13px;background:linear-gradient(90deg,#626b66,#e7ebe5,#747e76);border-radius:3px;z-index:2}
+.badge-face{
+  border-radius:11px;border:1px solid #a9afa4;
+  box-shadow:2px 3px 0 #61685e,0 17px 24px #0005;
+}
+.badge-front{background:#e3e7d4}
+.badge-front img{height:77%;object-position:50% 40%}
+.badge-face .badge-name{height:23%;padding:0 11px}
+.badge-face::after{
+  content:"";position:absolute;top:7px;left:calc(50% - 13px);width:26px;height:5px;
+  border-radius:8px;background:#242925;box-shadow:inset 0 1px 2px #0009;pointer-events:none;
+}
+.badge-back{background:linear-gradient(145deg,#e4e9d8,#b6c493)}
+
+.badge-card{height:255px}

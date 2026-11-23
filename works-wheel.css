@@ -1,0 +1,10 @@
+.filters.works-wheel{--step:52px;position:relative;display:block;isolation:isolate;width:clamp(210px,31vw,360px);height:224px;flex:none;overflow:hidden;perspective:360px;touch-action:pan-x;user-select:none;cursor:grab}
+.works-wheel.is-dragging{cursor:grabbing}
+.works-wheel::before{content:"";position:absolute;inset:calc(50% - 26px) 5px auto;height:52px;background:var(--tea);border-radius:6px;pointer-events:none}
+.filters.works-wheel .filter{position:absolute;top:50%;left:8px;right:8px;width:calc(100% - 16px);height:50px;margin:0;padding:0 23px;border:0;border-radius:5px;background:transparent;box-shadow:none;text-align:left;font-size:18px;letter-spacing:.12em;opacity:var(--opacity);filter:blur(var(--blur));transform:translate3d(var(--x),calc(-50% + var(--y)),0) rotateX(var(--tilt));transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .27s,filter .27s;cursor:inherit}
+.filters.works-wheel .filter[aria-pressed="true"]{font-weight:800;color:var(--ink);background:transparent}
+.works-wheel .filter[aria-pressed="true"]::after{content:"↵";float:right;font:14px "Courier New",monospace}
+.filters.works-wheel.is-dragging .filter{transition:none}
+.works-wheel .filter:focus-visible{outline:2px solid var(--ink);outline-offset:-3px}
+@media(max-width:520px){.works .sectionline{align-items:center}.filters.works-wheel{width:min(100%, 240px);height:204px}.filters.works-wheel .filter{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){.filters.works-wheel .filter{transition:none}}

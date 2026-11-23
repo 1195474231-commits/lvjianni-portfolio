@@ -1,0 +1,77 @@
+:root{--top-nav-height:70px}
+header.top-nav{
+  position:sticky;
+  top:0;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  max-width:none;
+  height:var(--top-nav-height);
+  margin:0;
+  padding:0 clamp(14px,5vw,68px);
+  pointer-events:none;
+}
+.top-nav nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(3px,1vw,12px);
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:5px 7px;
+  border:1px solid #eeeee01c;
+  border-radius:14px;
+  background:#191a19ed;
+  backdrop-filter:blur(14px);
+  pointer-events:auto;
+  transition:max-width .42s ease,border-radius .32s ease,box-shadow .32s ease;
+}
+.top-nav.is-compact nav{
+  max-width:360px;
+  border-radius:999px;
+  box-shadow:0 6px 22px #0005;
+}
+.top-nav nav a{
+  display:block;
+  padding:9px clamp(8px,2.3vw,24px);
+  border-radius:999px;
+  color:#e7e9e4;
+  font-size:13px;
+  line-height:1.15;
+  white-space:nowrap;
+}
+.top-nav nav a:hover,.top-nav nav a[aria-current]{color:#e4edb5}
+.top-nav nav a:focus-visible{outline:1px solid #dbe59c;outline-offset:2px}
+.top-nav nav:not([data-indicator-ready]) a[aria-current]{background:#343932}
+.top-nav .nav-indicator{
+  position:absolute;
+  z-index:-1;
+  top:5px;
+  bottom:5px;
+  left:0;
+  width:var(--indicator-width,0px);
+  transform:translateX(var(--indicator-x,0px));
+  border-radius:999px;
+  background:#343932;
+  pointer-events:none;
+}
+.top-nav nav[data-indicator-ready] .nav-indicator{
+  transition:transform .24s ease,width .24s ease;
+}
+@media(prefers-reduced-motion:reduce){
+  .top-nav nav,.top-nav nav[data-indicator-ready] .nav-indicator{transition:none}
+}
+body>main,body>footer{width:auto;margin-inline:auto;padding-inline:clamp(18px,5vw,68px)}
+body main.profile{width:auto;margin-inline:auto}
+.top-nav+main .intro-panel{min-height:calc(100svh - var(--top-nav-height));margin-inline:calc(-1 * clamp(18px,5vw,68px))}
+#works,#contact{scroll-margin-top:var(--top-nav-height)}
+#works .figure-index{display:flex;gap:5px 17px;flex-wrap:wrap;margin:0 0 24px}
+#works .figure-index strong{flex-basis:100%;margin-bottom:3px}
+#works .figure-index a{display:grid;grid-template-columns:auto auto}
+#works .figure-index a[hidden]{display:none}
+@media(max-width:650px){:root{--top-nav-height:60px}#works .figure-index{display:none}}

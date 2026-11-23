@@ -1,0 +1,16 @@
+/* Shared scrolling treatment for project dialogs. */
+dialog{
+  color-scheme:dark;
+  scrollbar-width:thin;
+  scrollbar-color:#777d64 #191a19;
+}
+dialog::-webkit-scrollbar{width:7px;height:7px}
+dialog::-webkit-scrollbar-track{background:#191a19;border-radius:999px}
+dialog::-webkit-scrollbar-thumb{
+  background:#777d64;
+  border:2px solid #191a19;
+  border-radius:999px;
+}
+dialog::-webkit-scrollbar-thumb:hover{background:#acb58d}
+dialog::-webkit-scrollbar-button{display:none;width:0;height:0}
+dialog::-webkit-scrollbar-corner{background:#191a19}
