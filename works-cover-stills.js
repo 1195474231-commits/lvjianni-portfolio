@@ -45,9 +45,22 @@
     video.poster = poster.src;
     video.setAttribute('aria-hidden','true');
     video.setAttribute('disablepictureinpicture','');
-    cover.classList.add('has-still','still-ready');
+    cover.classList.add('has-still');
+    poster.addEventListener('load', () => cover.classList.add('still-ready'));
+    poster.addEventListener('error', () => { poster.remove(); video.removeAttribute('poster'); });
+    video.addEventListener('loadeddata', () => cover.classList.add('still-ready'));
+    video.addEventListener('playing', () => cover.classList.add('is-previewing'));
+    const originals = {yiwu:'assets/yiwu/adorn.mp4',chaoneng:'assets/films/chaoneng-web.mp4',micro:'assets/films/micro-web.mp4',mission:'assets/films/mission-web.mp4'};
+    let usedFallback = false;
+    video.addEventListener('error', () => {
+      if (usedFallback) return;
+      usedFallback = true;
+      video.src = originals[key];
+      video.load();
+      sync();
+    });
     cover.querySelector('img').after(video);
-    video.src = 'assets/previews/' + key + '.mp4';
+    video.src = originals[key];
     states.set(cover,{video,visible:false});
     warmup.observe(cover);
     visible.observe(cover);
@@ -58,3 +71,5 @@
   reduced.addEventListener('change',sync);
   document.addEventListener('pointerdown',sync,{once:true,passive:true});
 })();
+
+
